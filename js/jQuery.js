@@ -4,6 +4,7 @@ $('body').css({
     backgroundColor: '#AFFFFD'
 })
 
+
 $('#to-do-list').css({
     backgroundColor: '#00FFF9',
     width: '700px',
@@ -22,7 +23,7 @@ $('#to-do-list > h1').css({
 
 $('#to-do-list > input').css({
     fontSize: '3rem',
-    border: 'solid 2px #000'
+    border: 'solid 2px #000',
 })
 
 $('#to-do-list > button').css({
@@ -31,4 +32,15 @@ $('#to-do-list > button').css({
     fontSize: '2rem',
     backgroundColor: '#AFFFFD',
     border: 'solid 2px #000'
+})
+
+$('#to-do-list > button').on('click', function(){
+    let inputText = $('input').val();
+    if(inputText === '') return false;
+    $('#result').append("<li>" + inputText + "</li>");
+    $('input').val('')
+});
+
+$('result').css({
+    width: '400px'
 })
